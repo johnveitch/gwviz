@@ -12,4 +12,4 @@ psi = 0.4 * np.pi
 # Units are in radians, so set degrees=False
 fig = plot_detector_angles(phi, theta, psi)
 
-fig.savefig("detector_angles.png")
+fig.savefig("detector_angles.pdf")

@@ -34,9 +34,9 @@ def plot_cbc_diagram(
 
     fig = plt.figure(dpi=200)
     ax = fig.add_subplot(111, projection="3d")
-    ax.view_init(vertical_axis="z", azim=45, elev=None)
+    ax.view_init(vertical_axis="z", azim=25, elev=None)
     ax.set_axis_off()
-
+    m_offset = [-0.1, 0., 0.05]
     if degrees:
         iota = to_radians(iota)
         psi = to_radians(psi)
@@ -98,8 +98,7 @@ def plot_cbc_diagram(
     ax.scatter(*m1_coords, s=50.0, color="k")
     ax.scatter(*m2_coords, s=50.0, color="k")
 
-    ax.text(*m1_coords, "$m_1$")
-    ax.text(*m2_coords, "$m_2$")
+
 
     # Spins
     s1_coords, s2_coords = get_spins_coordinates(
@@ -192,9 +191,11 @@ def plot_cbc_diagram(
     ax.text(*axis_length * bases[2], r"$\hat{\mathbf{n}}$")
     ax.text(*axis_length * ex_rot, r"$\hat{\mathbf{x}}'$")
     ax.text(*axis_length * ey_rot, r"$\hat{\mathbf{y}}'$")
+    ax.text(*(m1_coords+m_offset), "$m_1$")
+    ax.text(*(m2_coords+m_offset), "$m_2$")
 
     ax.set_xlim(axis_length * np.array([-1, 1]))
     ax.set_ylim(axis_length * np.array([-1, 1]))
     ax.set_zlim(axis_length * np.array([0.0, 1]))
-
+    fig.tight_layout()
     return fig

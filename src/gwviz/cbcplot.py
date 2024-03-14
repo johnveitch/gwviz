@@ -110,8 +110,8 @@ def plot_cbc_diagram(
     )
     add_arrow3d(ax, m1_coords, s1_coords, color="k", **arrow_kwargs)
     add_arrow3d(ax, m2_coords, s2_coords, color="k", **arrow_kwargs)
-    ax.text(*s1_coords, r"$\mathbf{s_1}$")
-    ax.text(*s2_coords, r"$\mathbf{s_2}$")
+    ax.text(*s1_coords, r"$\mathbf{S_1}$")
+    ax.text(*s2_coords, r"$\mathbf{S_2}$")
 
     # Momentum vectors
     L_rot = rotation.apply(L)
@@ -188,7 +188,7 @@ def plot_cbc_diagram(
 
     ax.text(*axis_length * bases[0], r"$\hat{\mathbf{x}}$")
     ax.text(*axis_length * bases[1], r"$\hat{\mathbf{y}}$")
-    ax.text(*axis_length * bases[2], r"$\hat{\mathbf{n}}$")
+    ax.text(*axis_length * bases[2], r"$\hat{\mathbf{N}}$")
     ax.text(*axis_length * ex_rot, r"$\hat{\mathbf{x}}'$")
     ax.text(*axis_length * ey_rot, r"$\hat{\mathbf{y}}'$")
     ax.text(*(m1_coords+m_offset), "$m_1$")

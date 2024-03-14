@@ -186,11 +186,11 @@ def plot_cbc_diagram(
     ax.plot(*psi_angle, color="purple", **angle_kwargs)
     ax.text(*psi_angle.T[len(psi_angle.T) // 2], r"$\psi$")
 
-    ax.text(*axis_length * bases[0], r"$\hat{\mathbf{x}}$")
-    ax.text(*axis_length * bases[1], r"$\hat{\mathbf{y}}$")
+    ax.text(*axis_length * bases[0], r"${\mathbf{X}}$")
+    ax.text(*axis_length * bases[1], r"${\mathbf{Y}}$")
     ax.text(*axis_length * bases[2], r"$\hat{\mathbf{N}}$")
-    ax.text(*axis_length * ex_rot, r"$\hat{\mathbf{x}}'$")
-    ax.text(*axis_length * ey_rot, r"$\hat{\mathbf{y}}'$")
+    ax.text(*axis_length * ex_rot, r"${\mathbf{x}}$")
+    ax.text(*axis_length * ey_rot, r"${\mathbf{y}}$")
     ax.text(*(m1_coords+m_offset), "$m_1$")
     ax.text(*(m2_coords+m_offset), "$m_2$")
 
